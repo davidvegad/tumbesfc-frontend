@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURACIÓN ---
     // ¡IMPORTANTE! Cambia esta URL por la URL de tu API en Render
     const API_BASE_URL = 'https://mi-backend-render.onrender.com/api'; 
+	//const API_BASE_URL = 'http://127.0.0.1:8000/api'; 
     const SILUETA_URL = 'identity/silueta.png'; // Ruta a una imagen por defecto
 
     // --- FUNCIONES PARA CARGAR DATOS ---
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="swiper-slide player-card">
                         <img src="${jugador.foto || SILUETA_URL}" alt="Foto de ${jugador.nombre}">
                         <h3>${jugador.nombre}</h3>
-                        <p>${jugador.posicion.nombre}</p>
+                        <p>${jugador.posicion}</p>
                     </div>`;
                 wrapper.innerHTML += jugadorCard;
             });
@@ -86,16 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const fechaFormateada = fecha.toLocaleDateString('es-ES', { year: 'numeric', month: 'short', day: 'numeric' });
                 // Asumiendo que tu API no genera el enlace a la noticia detallada, lo omitimos por ahora
                 const noticiaCard = `
-                    <div class="swiper-slide noticia-card">
-                        <a href="#" style="text-decoration:none;color:inherit;">
-                            <img src="${noticia.imagen}" alt="Imagen noticia" class="noticia-img">
-                            <div class="noticia-content">
-                                <h3>${noticia.titulo}</h3>
-                                <p class="news-date">${fechaFormateada}</p>
-                                <p class="news-resumen">${noticia.resumen.substring(0, 90)}...</p>
-                            </div>
-                        </a>
-                    </div>`;
+					<div class="swiper-slide noticia-card">
+						<a href="noticia.html?id=${noticia.id}" style="text-decoration:none;color:inherit;">
+							<img src="${noticia.imagen}" alt="Imagen noticia" class="noticia-img">
+							<div class="noticia-content">
+								<h3>${noticia.titulo}</h3>
+								<p class="news-date">${fechaFormateada}</p>
+								<p class="news-resumen">${noticia.resumen.substring(0, 90)}...</p>
+							</div>
+						</a>
+					</div>`;
                 wrapper.innerHTML += noticiaCard;
             });
             new Swiper('.noticiasSwiper', { slidesPerView: 1, spaceBetween: 32, navigation: { nextEl: '.noticias-next', prevEl: '.noticias-prev' }, pagination: { el: '.noticias-pagination', clickable: true }, breakpoints: { 600: { slidesPerView: 1 }, 900: { slidesPerView: 2 }, 1200: { slidesPerView: 3 } } });

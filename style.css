@@ -832,4 +832,21 @@ nav ul li a:hover {
     }
 }
 
+/* --- ESTILOS ADICIONALES PARA DETALLE DE NOTICIA --- */
 
+.noticia-articulo {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: left; /* Alineamos el texto a la izquierda para mejor lectura */
+}
+
+.cuerpo-noticia {
+  font-size: 1.1rem; /* Tamaño de letra cómodo para leer */
+  line-height: 1.7;  /* Espacio entre líneas */
+  color: #333;
+}
+
+.cuerpo-noticia p {
+  margin-bottom: 1em; /* Espacio entre párrafos */
+}
