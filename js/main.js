@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURACIÓN ---
     // ¡IMPORTANTE! Cambia esta URL por la URL de tu API en Render
-    const API_BASE_URL = 'http://127.0.0.1:8000/api'; 
+    const API_BASE_URL = 'https://mi-backend-render.onrender.com/api'; 
     const SILUETA_URL = 'identity/silueta.png'; // Ruta a una imagen por defecto
 
     // --- FUNCIONES PARA CARGAR DATOS ---
