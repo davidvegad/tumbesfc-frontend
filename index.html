@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumbes FC - El Equipo de la Ciudad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="identity/logo.png" alt="Logo Tumbes FC" width="80">
+                <span>Tumbes FC</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about">Nosotros</a></li>
+                    <li><a href="#team">Equipo</a></li>
+                    <li><a href="#matches">Partidos</a></li>
+                    <li><a href="#noticias">Noticias</a></li>
+                    <li><a href="#sponsors">Patrocinadores</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-swiper">
+            <div class="swiper heroSwiper">
+                <div class="swiper-wrapper" id="hero-wrapper">
+                    </div>
+                <div class="swiper-button-next hero-next"></div>
+                <div class="swiper-button-prev hero-prev"></div>
+                <div class="swiper-pagination hero-pagination"></div>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2>Nuestra Historia</h2>
+                <p>Somos Tumbes FC, un equipo de fútbol amateur nacido de la pasión y la amistad. Fundado en 2024, nuestro objetivo es representar con orgullo a nuestra ciudad en cada cancha que pisamos. Creemos en el juego limpio, el esfuerzo y el trabajo en equipo para alcanzar la victoria.</p>
+            </div>
+        </section>
+
+        <section id="team" class="content-section">
+            <div class="container">
+                <h2>Nuestro Equipo</h2>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="jugadores-wrapper">
+                        </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="matches" class="content-section">
+            <div class="container">
+                <h2>Próximos Partidos</h2>
+                <div class="swiper partidosSwiper">
+                    <div class="swiper-wrapper" id="partidos-wrapper">
+                        </div>
+                    <div class="swiper-button-next partidos-next"></div>
+                    <div class="swiper-button-prev partidos-prev"></div>
+                    <div class="swiper-pagination partidos-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resultados" class="content-section">
+            <div class="container">
+                <h2>Últimos Resultados</h2>
+                <div class="swiper resultadosSwiper">
+                    <div class="swiper-wrapper" id="resultados-wrapper">
+                        </div>
+                    <div class="swiper-button-next resultados-next"></div>
+                    <div class="swiper-button-prev resultados-prev"></div>
+                    <div class="swiper-pagination resultados-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="noticias" class="content-section">
+            <div class="container">
+                <h2>Noticias</h2>
+                <div class="swiper noticiasSwiper">
+                    <div class="swiper-wrapper" id="noticias-wrapper">
+                        </div>
+                    <div class="swiper-button-next noticias-next"></div>
+                    <div class="swiper-button-prev noticias-prev"></div>
+                    <div class="swiper-pagination noticias-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sponsors" class="content-section">
+            <div class="container">
+                <h2>Patrocinadores</h2>
+                <div class="sponsors-row sponsors-destacados" id="sponsors-destacados-wrapper">
+                    </div>
+                <div class="sponsors-row sponsors-normales" id="sponsors-normales-wrapper">
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="container">
+                <h2>Únete o Contáctanos</h2>
+                <p>¿Interesado en unirte al equipo o jugar un partido amistoso? Escríbenos a nuestras redes sociales.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/tumbesfc.2024/" target="_blank" style="display: flex; align-items: center; gap: 8px;"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="22" height="22"> Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=61572266071771" target="_blank" style="display: flex; align-items: center; gap: 8px;"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="22" height="22"> Facebook</a>
+                    <a href="https://wa.me/51979191095?text=Hola%20quiero%20información%20sobre%20Tumbes%20FC" target="_blank" style="display: flex; align-items: center; gap: 8px;"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="22" height="22"> WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tumbes FC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script> </body>
+</html>

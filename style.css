@@ -1,0 +1,835 @@
+:root {
+  --dark-blue: #182845;
+  --yellow: #FFD600;
+  --white: #fff;
+  --light-grey: #F6F6F6;
+}
+
+/* --------- RESETEO Y BASE --------- */
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: var(--light-grey);
+  color: var(--dark-blue);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Anton', Arial, sans-serif;
+  color: var(--dark-blue);
+  margin-top: 0;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--yellow);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* --------- HEADER Y NAVEGACIÓN --------- */
+header {
+    width: 100%;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 12px 32px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  font-family: 'Anton', Arial, sans-serif;
+  color: var(--dark-blue);
+  font-size: 1.7rem;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-link img {
+  width: 60px;
+  height: 60px;
+}
+
+
+nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  color: var(--dark-blue);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: var(--yellow);
+}
+
+/* --------- SECCIONES --------- */
+.content-section {
+  background: var(--light-grey);
+  padding: 10px 0 22px 0;
+}
+
+.container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* --------- BOTONES --------- */
+.cta-button {
+  display: inline-block;
+  padding: 12px 36px;
+  border-radius: 25px;
+  background: var(--yellow);
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 1.15rem;
+  border: none;
+  box-shadow: 0 2px 12px rgba(24,40,69,0.10);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin-top: 18px;
+  text-decoration: none;
+}
+.cta-button:hover {
+  background: var(--dark-blue);
+  color: var(--yellow);
+  box-shadow: 0 2px 18px rgba(24,40,69,0.17);
+}
+
+/* --------- CARDS GENERALES --------- */
+.card, .partido-card, .player-card {
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(24,40,69,0.08);
+  padding: 30px 24px;
+  margin: 12px auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover, .partido-card:hover, .player-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(24,40,69,0.13);
+}
+
+/* --------- PLAYER CARD SWIPER --------- */
+.mySwiper {
+  height: 370px !important;
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: flex-start;
+  background: none;
+}
+
+.player-card {
+  width: 200px;
+  height: 320px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.player-card img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.player-card h3 {
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: var(--dark-blue);
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+
+.player-card p {
+  color: #13B655;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+
+/* --------- PARTIDOS CARD SWIPER --------- */
+.partidosSwiper {
+  height: 280px !important;
+  max-width: 1250px;
+  margin: 0 auto 20px auto;
+  position: relative;
+}
+
+.partido-card {
+  width: 140px;
+  min-height: 260px;
+  background: var(--dark-blue);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin: 0 auto;
+  padding: 28px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.match-teams {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.team-name {
+  color: var(--white);
+  font-size: 1.2rem;
+  /*font-weight: bold;*/
+  line-height: 1;
+}
+
+.vs {
+  color: var(--yellow);
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 10px;
+  align-self: center;
+}
+
+.match-info {
+  width: 100%;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.08rem;
+  color: var(--white);
+  text-align: center;
+}
+.match-info p {
+  margin: 4px 0;
+  color: var(--white);
+  text-align: center;
+}
+
+/* --------- PAGINACIÓN Y FLECHAS SWIPER --------- */
+.swiper-pagination {
+  bottom: 8px !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  top: 45% !important;
+}
+
+/* --------- SOCIAL LINKS --------- */
+.social-links {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 18px;
+}
+.social-links a {
+  color: var(--dark-blue);
+  background: var(--yellow);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.18s, color 0.18s;
+}
+.social-links a:hover {
+  background: var(--dark-blue);
+  color: var(--yellow);
+}
+
+/* --------- FOOTER --------- */
+footer {
+  background: var(--dark-blue);
+  color: var(--white);
+  padding: 24px 0;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-top: 40px;
+}
+
+/* --------- RESPONSIVE --------- */
+@media (max-width: 900px) {
+  .container, header .container {
+    padding: 0 10px;
+  }
+  nav ul {
+    gap: 16px;
+  }
+  .logo-link span {
+    font-size: 1.1rem;
+  }
+  .partido-card, .player-card {
+    width: 95vw;
+    min-width: unset;
+    font-size: 0.95rem;
+  }
+  .match-teams {
+    font-size: 1.2rem;
+  }
+  .mySwiper, .partidosSwiper {
+    max-width: 99vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .partido-card, .player-card {
+    width: 98vw;
+    min-width: unset;
+  }
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.news-card {
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(24,40,69,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+
+.news-card:hover {
+  box-shadow: 0 6px 24px rgba(24,40,69,0.14);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.news-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 18px 14px 14px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.news-content h3 {
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+  font-family: 'Anton', Arial, sans-serif;
+}
+
+.news-date {
+  font-size: 0.97rem;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.news-resumen {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.noticiasSwiper {
+  height: 500px !important;
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  position: relative;
+}
+.noticia-card {
+  width: 320px;
+  min-height: 320px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 2px 14px rgba(24,40,69,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-align: center;
+  margin: 0 auto;
+}
+.noticia-card:hover {
+  box-shadow: 0 6px 22px rgba(24,40,69,0.13);
+  transform: scale(1.025);
+}
+.noticia-img {
+  width: 100%;
+  height: 300px;          /* Ajusta a tu gusto: 150px, 180px, etc. */
+  object-fit: cover;      /* Esto hace el recorte bonito */
+  object-position: center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background: #eee;       /* Para fondos sin imagen */
+  display: block;
+}
+
+.noticia-content {
+  padding: 18px 14px 14px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.noticia-content h3 {
+  font-size: 1.15rem;
+  margin: 0 0 10px 0;
+  font-family: 'Anton', Arial, sans-serif;
+  color: var(--dark-blue);
+}
+.news-date {
+  font-size: 0.97rem;
+  color: #888;
+  margin-bottom: 6px;
+}
+.news-resumen {
+  font-size: 1rem;
+  margin-bottom: 0;
+  color: var(--dark-blue);
+}
+
+.sponsors-row {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.sponsors-destacados {
+  margin-bottom: 14px;
+}
+
+.sponsor-link {
+  display: flex;
+  align-items: center;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: filter 0.18s, opacity 0.18s, transform 0.2s;
+  background: none;
+  border-radius: 14px;
+  padding: 0;
+}
+
+.sponsor-link:hover {
+  filter: none;
+  opacity: 1;
+  transform: scale(1.07);
+  background: none;
+}
+
+.sponsor-link img {
+  height: 54px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: height 0.2s, box-shadow 0.2s, border 0.18s;
+}
+
+.sponsor-big img {
+  height: 90px;
+  max-width: 220px;
+  box-shadow: 0 2px 18px rgba(255,214,0,0.16);
+  border: 3px solid var(--yellow);
+}
+
+.noticia-img-detalle {
+  width: 100%;
+  max-width: 540px;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid var(--yellow);
+  box-shadow: 0 6px 28px rgba(255,214,0,0.13);
+}
+
+.liga-nombre {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--yellow);
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.match-teams {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+}
+
+.team-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 4px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(24,40,69,0.08);
+}
+
+.resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 22px;
+}
+.resultado-card {
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 2px 14px rgba(24,40,69,0.08);
+  padding: 22px 18px;
+  text-align: center;
+  transition: box-shadow 0.18s;
+}
+.resultado-card:hover {
+  box-shadow: 0 6px 20px rgba(24,40,69,0.14);
+}
+.liga-nombre {
+  font-size: 1rem;
+  color: var(--yellow);
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.resultado-equipos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 88px;
+}
+.team-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 4px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(24,40,69,0.08);
+}
+.team-name-ult {
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: 1.01rem;
+  color: var(--dark-blue);
+}
+.resultado-marcador {
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.resultado-marcador .guion {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #aaa;
+}
+.resultado-meta {
+  color: #555;
+  font-size: 1.01rem;
+  margin-top: 7px;
+  margin-bottom: 8px;
+}
+.resultado-goleadores {
+  margin-top: 5px;
+  font-size: 0.98rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.goleadores-local, .goleadores-visitante {
+  display: block;
+  margin: 0;
+}
+
+.resultadosSwiper {
+  height: 250px !important;
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  position: relative;
+}
+.resultado-card {
+  width: 340px;
+  min-height: 230px;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 2px 14px rgba(24,40,69,0.08);
+  padding: 22px 18px;
+  text-align: center;
+  transition: box-shadow 0.18s, transform 0.18s;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.resultado-card:hover {
+  box-shadow: 0 6px 20px rgba(24,40,69,0.14);
+  transform: scale(1.025);
+}
+
+.liga-nombre {
+  font-size: 1rem;
+  color: var(--yellow);
+}
+
+@media (max-width: 700px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    background: var(--white);
+    position: absolute;
+    left: 0; top: 60px;
+    box-shadow: 0 2px 12px rgba(24,40,69,0.06);
+    z-index: 200;
+    padding: 16px 0;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--dark-blue);
+    margin-left: auto;
+    cursor: pointer;
+  }
+}
+
+
+/* --------- HERO --------- */
+
+/* El contenedor hero debe tener altura fija y relativa */
+.hero-swiper {
+  position: relative;
+  width: 100%;
+  height: 920px;        /* Ajusta aquí el alto deseado para desktop */
+  overflow: hidden;
+}
+
+/* Para móviles, ajusta el alto */
+@media (max-width: 600px) {
+  .hero-swiper {
+    height: 280px;      /* Ajusta aquí el alto deseado para móviles */
+  }
+}
+
+/* La imagen debe cubrir el contenedor */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Esto hace que la imagen se recorte y siempre llene el espacio */
+  display: block;
+}
+
+.hero-text-overlay {
+    position: absolute;
+    left: 0; right: 0; bottom: 30px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    z-index: 2;
+}
+.hero-text-overlay h1 {
+    font-size: 1.2rem;
+	color: #FFF;
+    font-weight: bold;
+    margin: 0;
+}
+.hero-text-overlay p {
+    font-size: 1.0rem;
+	color: #FFD700; /* amarillo */
+    margin: 0.3em 0 0 0;
+}
+.hero-cta {
+  display: inline-block;
+  padding: 0.6em 2em;
+  background: var(--yellow, #FFD600);  /* Usa tu color principal o reemplaza */
+  color: #222;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  font-size: 1rem;
+  margin-top: 1.2em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+
+.hero-cta:hover,
+.hero-cta:focus {
+  background: #222;
+  color: var(--yellow, #FFD600);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.17);
+}
+
+
+header {
+    width: 100%;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0.5em 1.5em;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-decoration: none;
+}
+
+.logo-link span {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #172342;
+    letter-spacing: 0.03em;
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li a {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #232949;
+    text-decoration: none;
+    padding: 0.5em 0.2em;
+    border-radius: 0.3em;
+    transition: background 0.2s;
+}
+nav ul li a:hover {
+    background: #e4e9ff;
+}
+
+@media (max-width: 600px) {
+  header {
+    margin-bottom: 10em; /* ajusta según necesidad */
+  }
+}
+
+
+@media (max-width: 800px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.7em 0.9em;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+        width: 100%;
+        padding-top: 0.6em;
+    }
+    nav ul li a {
+        font-size: 1rem;
+        padding: 0.3em 0.5em;
+    }
+    .logo-link span {
+        font-size: 1.3rem;
+    }
+}
+
+
