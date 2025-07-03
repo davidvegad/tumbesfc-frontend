@@ -31,6 +31,18 @@ h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
   text-align: center;
+  position: relative; /* Necesario para el pseudo-elemento */
+  padding-bottom: 10px; /* Espacio para el subrayado */
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px; /* Ancho del subrayado */
+  height: 4px; /* Grosor del subrayado */
+  background: var(--yellow);
+  margin: 10px auto 0 auto; /* Centrar el subrayado */
+  border-radius: 2px;
 }
 
 h3 {
@@ -131,7 +143,19 @@ section[id] {
 
 .content-section {
   background: var(--light-grey);
-  padding: 10px 0 22px 0;
+  padding: 40px 0; /* Aumentado el padding vertical */
+}
+
+/* --------- ANIMACIONES AL HACER SCROLL --------- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --------- HERO --------- */
@@ -142,7 +166,7 @@ section[id] {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  height: 817px; /* Altura para PC */
+  height: 750px; /* Altura para PC */
   overflow: hidden;
 }
 
@@ -451,6 +475,7 @@ section[id] {
   flex-direction: column;
   transition: box-shadow 0.2s, transform 0.2s;
   margin: 0 auto;
+  border-top: 5px solid var(--yellow); /* Borde superior amarillo */
 }
 .noticia-card:hover {
   box-shadow: 0 6px 22px rgba(24,40,69,0.13);

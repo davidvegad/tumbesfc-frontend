@@ -2,8 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURACIÓN ---
-	const API_BASE_URL = 'https://mi-backend-render.onrender.com/api'; 
-    //const API_BASE_URL = 'http://127.0.0.1:8000/api';
+	//const API_BASE_URL = 'https://mi-backend-render.onrender.com/api'; 
+    const API_BASE_URL = window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://127.0.0.1:8000/api' // URL de tu backend local
+        : 'https://tu-backend-de-render.onrender.com/api'; // ¡IMPORTANTE! Reemplaza esto con la URL real de tu backend en Render
     const SILUETA_URL = 'identity/silueta.png'; // Ruta a una imagen por defecto
 
     // --- LÓGICA DEL MENÚ MÓVIL ---
@@ -261,6 +263,20 @@ document.addEventListener('DOMContentLoaded', () => {
         destacadosWrapper.innerHTML = destacadosHtml;
         normalesWrapper.innerHTML = normalesHtml;
     }
+
+    // --- LÓGICA PARA ANIMACIONES AL HACER SCROLL ---
+    const animateOnScrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        animateOnScrollObserver.observe(element);
+    });
 
     // --- LLAMAR A TODAS LAS FUNCIONES AL CARGAR LA PÁGINA ---
     function initApp() {
