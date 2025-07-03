@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ¡IMPORTANTE! Reutiliza la URL de tu API
     //const API_BASE_URL = 'https://mi-backend-render.onrender.com/api'; 
-	const API_BASE_URL = 'http://127.0.0.1:8000/api'; 
+	const API_BASE_URL = window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://127.0.0.1:8000/api' // URL de tu backend local
+        : 'https://mi-backend-render.onrender.com/api'; // ¡IMPORTANTE! Reemplaza esto con la URL real de tu backend en Render
 
     // 1. Obtener el ID de la noticia desde la URL
     const params = new URLSearchParams(window.location.search);

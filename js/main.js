@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//const API_BASE_URL = 'https://mi-backend-render.onrender.com/api'; 
     const API_BASE_URL = window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://127.0.0.1:8000/api' // URL de tu backend local
-        : 'https://tu-backend-de-render.onrender.com/api'; // ¡IMPORTANTE! Reemplaza esto con la URL real de tu backend en Render
+        : 'https://mi-backend-render.onrender.com/api'; // ¡IMPORTANTE! Reemplaza esto con la URL real de tu backend en Render
     const SILUETA_URL = 'identity/silueta.png'; // Ruta a una imagen por defecto
 
     // --- LÓGICA DEL MENÚ MÓVIL ---
