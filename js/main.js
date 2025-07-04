@@ -69,18 +69,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const slides = await fetchData('heroslides', wrapper);
         if (!slides) return;
 
-        const slidesHtml = slides.map(slide => `
+        const slidesHtml = slides.map(slide => {
+            const hasLink = slide.link && slide.link !== '#';
+            const linkStart = hasLink ? `<a href="${slide.link}" target="_blank" class="hero-link">` : '';
+            const linkEnd = hasLink ? `</a>` : '';
+
+            return `
             <div class="swiper-slide">
-                <a href="${slide.link || '#'}" target="_blank" class="hero-link">
+                ${linkStart}
+                <div class="hero-content-wrapper">
                     <img src="${slide.imagen}" alt="${slide.titulo}" class="hero-img">
                     <div class="hero-text-overlay">
                         ${slide.titulo ? `<h1>${slide.titulo}</h1>` : ''}
-                        ${slide.subtitulo ? `<p>${slide.subtitulo}</p>` : ''}
-                        ${(slide.boton_texto && slide.link) ? `<span class="hero-cta">${slide.boton_texto}</span>` : ''}
+                        ${slide.subtitulo ? `<p>${slide.subtitulo}</p>` : ''} <!-- Muestra siempre el subtítulo si existe -->
+                        ${(slide.boton_texto && hasLink) ? `<span class="hero-cta">${slide.boton_texto}</span>` : ''}
                     </div>
-                </a>
+                </div>
+                ${linkEnd}
             </div>
-        `).join('');
+        `;
+        }).join('');
 
         wrapper.innerHTML = slidesHtml;
 

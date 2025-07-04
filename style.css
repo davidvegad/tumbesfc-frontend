@@ -161,18 +161,25 @@ section[id] {
 /* --------- HERO --------- */
 .hero-swiper {
   position: relative;
-  width: 100vw; /* Ocupa todo el ancho de la ventana */
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  height: 750px; /* Altura para PC */
   overflow: hidden;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .hero-swiper {
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+	margin: 0 auto;
+    left: auto;
+    right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%; /* Altura para PC */
+  }
 }
 
 .hero-img {
   width: 100%;
-  height: 100%;
+  height: 100%; /* Ajustado para que ocupe el 100% de la altura de su contenedor */
   object-fit: cover;
   display: block;
 }
@@ -180,6 +187,14 @@ section[id] {
 .hero-link {
     text-decoration: none;
     color: inherit;
+    display: block; /* Asegura que el enlace ocupe todo el espacio */
+    width: 100%;
+}
+
+.hero-content-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Para que el overlay se posicione correctamente */
 }
 
 .hero-text-overlay {
@@ -245,16 +260,24 @@ section[id] {
 }
 
 /* Player Card */
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+  justify-items: center;
+}
+
 .mySwiper {
-  height: 370px !important;
+  height: 430px !important;
   max-width: 1200px;
   margin: 0 auto 20px auto;
   position: relative;
 }
 
 .player-card {
-  width: 250px; /* Un poco más ancho */
-  height: 320px;
+  width: 300px; /* Un poco más ancho */
+  height: 380px;
   background: var(--white);
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -272,8 +295,8 @@ section[id] {
 }
 
 .player-card img {
-  width: 150px; /* Ajustado para el nuevo ancho */
-  height: 150px;
+  width: 280px; /* Ajustado para el nuevo ancho */
+  height: 280px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
@@ -734,14 +757,22 @@ footer {
     }
 
     .hero-swiper {
-        height: 400px;
+        height: 200px;
+        width: 100%;
+        margin: 0 auto;
+        left: auto;
+        right: auto;
+    }
+
+    .hero-text-overlay {
+        bottom: 10px; /* Ajustado para móviles */
     }
 
     .hero-text-overlay h1 {
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
     .hero-text-overlay p {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     h2 {
@@ -754,5 +785,9 @@ footer {
 
     .mySwiper, .partidosSwiper, .resultadosSwiper, .noticiasSwiper {
         max-width: 100vw;
+    }
+
+    .players-grid {
+        grid-template-columns: 1fr;
     }
 }
