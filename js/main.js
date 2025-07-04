@@ -297,4 +297,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initApp();
+
+    // --- LÓGICA DEL BOTÓN VOLVER ARRIBA ---
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+
+    if (scrollToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Muestra el botón después de 300px de scroll
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });

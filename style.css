@@ -18,13 +18,14 @@ body {
   color: var(--dark-blue);
   margin: 0;
   padding: 0;
+  line-height: 1.6; /* Mejorar legibilidad */
 }
 
 h1, h2, h3 {
   font-family: 'Anton', Arial, sans-serif;
   color: var(--dark-blue);
   margin-top: 0;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px; /* Ajustar espaciado */
 }
 
 h2 {
@@ -111,6 +112,7 @@ nav ul li a {
 
 nav ul li a:hover {
   color: var(--yellow);
+  transform: translateY(-2px);
 }
 
 /* --- MENÚ MÓVIL (HAMBURGUESA) --- */
@@ -212,12 +214,14 @@ section[id] {
     color: #FFF;
     font-weight: bold;
     margin: 0;
+    letter-spacing: 2px; /* Mantener el espaciado para el hero */
 }
 
 .hero-text-overlay p {
     font-size: 1.2rem;
     color: var(--yellow);
     margin: 0.3em 0 0 0;
+    line-height: 1.4; /* Ajustar interlineado */
 }
 
 .hero-cta {
@@ -238,7 +242,8 @@ section[id] {
 .hero-cta:hover {
   background: var(--dark-blue);
   color: var(--yellow);
-  box-shadow: 0 2px 18px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
 }
 
 
@@ -290,8 +295,8 @@ section[id] {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .player-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(24,40,69,0.13);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(24,40,69,0.15);
 }
 
 .player-card img {
@@ -343,8 +348,8 @@ section[id] {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .partido-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(24,40,69,0.13);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(24,40,69,0.15);
 }
 
 .liga-nombre {
@@ -428,8 +433,8 @@ section[id] {
   align-items: center;
 }
 .resultado-card:hover {
-  box-shadow: 0 6px 20px rgba(24,40,69,0.14);
-  transform: scale(1.025);
+  box-shadow: 0 8px 22px rgba(24,40,69,0.16);
+  transform: translateY(-3px);
 }
 
 .resultado-equipos {
@@ -501,8 +506,8 @@ section[id] {
   border-top: 5px solid var(--yellow); /* Borde superior amarillo */
 }
 .noticia-card:hover {
-  box-shadow: 0 6px 22px rgba(24,40,69,0.13);
-  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(24,40,69,0.15);
+  transform: translateY(-6px);
 }
 
 .noticia-link {
@@ -574,7 +579,8 @@ section[id] {
 .sponsor-link:hover {
   filter: none;
   opacity: 1;
-  transform: scale(1.07);
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .sponsor-link img {
@@ -617,6 +623,8 @@ section[id] {
 .social-link-item:hover {
   background: var(--dark-blue);
   color: var(--yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .social-link-item img {
@@ -771,8 +779,9 @@ footer {
     .hero-text-overlay h1 {
         font-size: 1rem;
     }
-    .hero-text-overlay p {
-        font-size: 0.8rem;
+    .hero-cta {
+        padding: 8px 20px; /* Reduced padding */
+        font-size: 0.9rem; /* Reduced font size */
     }
 
     h2 {
@@ -790,4 +799,37 @@ footer {
     .players-grid {
         grid-template-columns: 1fr;
     }
+}
+/* --------- SCROLL TO TOP BUTTON --------- */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--dark-blue);
+  color: var(--yellow);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
